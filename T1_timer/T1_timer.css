@@ -1,0 +1,17 @@
+html {
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 60px;
+}
+
+.beCenter {
+  display:flex;
+  align-items:center;
+  text-align: center;
+  justify-content:center;
+}
+
+h1 {
+  color: aqua;
+  
+}
