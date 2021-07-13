@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "react-router-dom"
 import { Layout, Menu } from 'antd';
 import {
@@ -14,9 +14,14 @@ import 'antd/dist/antd.css';
 const { Sider } = Layout;
 
 const Main = () => {
+  const [collapsed, setCollapsed] = useState(false)
+
+  const onCollapse = () => {
+    setCollapsed(!collapsed)
+  }
   return (
     <Layout>
-      <Sider
+      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}
       style={{
         overflow: 'auto',
         height: '100vh',
