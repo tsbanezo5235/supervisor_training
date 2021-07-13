@@ -1,7 +1,10 @@
 import React, {useState} from "react"
+import { Route } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { Layout, Menu } from 'antd';
 import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
   BarChartOutlined,
   ShopOutlined,
   UserOutlined,
@@ -9,9 +12,15 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
+import './Main.css';
+import About from './About'
+import Sapling from './Sapling'
+import Tree from './Tree'
+import Fruit from './Fruit'
+import Analyze from './Analyze'
 
 
-const { Sider } = Layout;
+const { Sider, Header, Content } = Layout;
 
 const Main = () => {
   const [collapsed, setCollapsed] = useState(false)
@@ -19,13 +28,12 @@ const Main = () => {
   const onCollapse = () => {
     setCollapsed(!collapsed)
   }
+
   return (
     <Layout>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}
+      <Sider trigger={null} collapsible collapsedWidth={0} collapsed={collapsed}
       style={{
-        overflow: 'auto',
         height: '100vh',
-        position: 'fixed',
         left: 0,
       }}
       >
@@ -48,6 +56,39 @@ const Main = () => {
           </Menu.Item>
         </Menu>
       </Sider>
+
+      <Layout className="site-layout">
+        <Header className="site-layout-background" style={{ padding: 0 }}>
+          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            className: 'trigger',
+            onClick: onCollapse,
+          })}
+        </Header>
+        <Content
+          className="site-layout-background"
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            minHeight: 280,
+          }}
+        >
+          <Route path='/About'>
+            <About></About>
+          </Route>
+          <Route path='/Sapling'>
+            <Sapling></Sapling>
+          </Route>
+          <Route path='/Tree'>
+            <Tree></Tree>
+          </Route>
+          <Route path='/Fruit'>
+            <Fruit></Fruit>
+          </Route>
+          <Route path='/Analyze'>
+            <Analyze></Analyze>
+          </Route>
+        </Content>
+      </Layout>
     </Layout>
   )
 
