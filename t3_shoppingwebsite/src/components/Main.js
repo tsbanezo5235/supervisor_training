@@ -57,9 +57,9 @@ const Main = () => {
         </Menu>
       </Sider>
 
-      <Layout className="site-layout">
+      <Layout className="site-layout" onClick={ collapsed === false && onCollapse }>
         <Header className="site-layout-background" style={{ padding: 0 }}>
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+          {collapsed === true && React.createElement(MenuUnfoldOutlined,{
             className: 'trigger',
             onClick: onCollapse,
           })}
