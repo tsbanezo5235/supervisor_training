@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import { Layout, Menu } from 'antd';
 import {
   MenuUnfoldOutlined,
-  MenuFoldOutlined,
   BarChartOutlined,
   ShopOutlined,
   UserOutlined,
@@ -57,7 +56,7 @@ const Main = () => {
         </Menu>
       </Sider>
 
-      <Layout className="site-layout" onClick={ collapsed === false && onCollapse }>
+      <Layout className="site-layout" onClick={ collapsed === false ? onCollapse : undefined}>
         <Header className="site-layout-background" style={{ padding: 0 }}>
           {collapsed === true && React.createElement(MenuUnfoldOutlined,{
             className: 'trigger',
