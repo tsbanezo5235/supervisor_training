@@ -2,7 +2,7 @@ import React from 'react';
 // import Readpdf from './components/Readpdf'
 import SinglePagePDFViewer from './components/single-page'
 import AllPagesPDFViewer from './components/all-pages';
-import TAO from './The Applications Of WiFi-based Wireless Sensor.pdf'
+import TAO from './sample.pdf'
 import './App.css';
 
 function App() {
