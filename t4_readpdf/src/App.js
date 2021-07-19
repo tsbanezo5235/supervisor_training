@@ -3,8 +3,9 @@ import 'antd/dist/antd.css';
 import { Modal, Button } from 'antd';
 // import Readpdf from './components/Readpdf'
 import SinglePagePDFViewer from './components/single-page'
-import TAO from './sample.pdf'
-import './App.css';
+// import TAO from './sample.pdf'
+import TPDF from './CY19 Mongoose HAS  SOP TILT.pdf';
+import Style from './App.module.css';
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -26,9 +27,24 @@ function App() {
       <Button type="primary" onClick={showModal}>
         點擊閱讀pdf
       </Button>
-      <Modal title="PDF預覽" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} width={700}>
+      <Modal 
+        // bodyStyle={{
+        //   display: 'flex',
+        //   flexWrap: 'wrap',
+        //   alignItems: 'center',
+        //   justifyContent: 'center'}}
+        title="PDF預覽" 
+        visible={isModalVisible} 
+        onOk={handleOk} 
+        onCancel={handleCancel} 
+        width={'100%'}
+        centered= {true}
+        >
         <h4>Single Page</h4>
-        <SinglePagePDFViewer pdf={TAO} />
+        <div className={Style.box}>
+          <SinglePagePDFViewer pdf={TPDF} />
+        </div>
+        
 
         <hr />
       </Modal>
