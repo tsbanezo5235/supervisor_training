@@ -29,7 +29,7 @@ function App() {
         visible={isModalVisible} 
         onOk={handleOk} 
         onCancel={handleCancel}
-        width={700}
+        width={'80%'}
         centered={true}
         >
         <Player></Player>

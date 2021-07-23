@@ -7,6 +7,8 @@ const Player = () => {
     <ReactPlayer
       url={MyVideo}
       controls = {true}
+      width={'100%'}
+      height={'75%'}
     ></ReactPlayer>
   )
 }
