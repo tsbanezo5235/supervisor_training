@@ -56,6 +56,7 @@ const Stackbarchart = () => {
         }
       },
       fill: {
+        colors: ['lightblue', '#FFD306', '#FFAD86', 'gray'],
         opacity: 1
       },
       legend: {
